@@ -1,0 +1,23 @@
+header{
+    color:black;
+    text-align: center;
+}
+li{
+    font-size: 25px;
+}
+.content{
+    font-size: 20px;
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+footer{
+    text-align: center;
+    font-size: 25px;
+    background-color: #e6e6fa;
+}
+
