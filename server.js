@@ -6,7 +6,7 @@ app.use(express.static('public'))
 
 // load home page file with directory http:localhost(8000)/
 app.get('/', function (request, response) {
-    response.sendFile(__dirname + '/homePage.html');
+    response.sendFile(__dirname + '/home.html');
 });
 
 // load map mode page file with directory http:localhost(8000)/mapMode.html
