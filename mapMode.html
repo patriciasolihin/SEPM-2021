@@ -7,11 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map Mode</title>
     <link rel="stylesheet" href="mapModeStyling.css" media="screen" charset="UTF-8">
+    <style>
+        #map {
+            margin: auto;
+            height: 400px;
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Victorian COVID-19 Testing Times & Information</h1> 
+        <h1>Victorian COVID-19 Testing Times & Information</h1>
     </header>
     <nav>
         <a href="/">Home Page</a>
@@ -19,7 +26,150 @@
         <a>Create an Account</a>
     </nav>
 
-    <p>This is Map Mode</p>
+    <p>Victorian COVID-19 Test Location Sites Map</p>
+
+    <div id="map"></div>
+    <script>
+        function initMap() {
+
+            // Map settings
+            var settings = {
+                zoom: 11.5,
+                center: { lat: -37.814, lng: 144.96332 }
+            }
+
+            // New Map
+            var map = new google.maps.Map(document.getElementById('map'), settings);
+
+            // add Markers for test Locations
+            // markers are indexed starting from the first location mentioned in the elicitation notes
+            var markers = [];
+
+            // Aughtie Walk - Albert Park: 23 Aughtie Dr, Albert Park, VIC, 3206
+            var marker1 = new google.maps.Marker({
+                position: { lat: -37.845762, lng: 144.965389 },
+                map: map
+            });
+            markers.push(marker1);
+
+            // Port Melbourne Respiratory Clinic: 405 Bay st, Port Melbourne, VIC 3207
+            var marker2 = new google.maps.Marker({
+                position: { lat: -37.83418029689519, lng: 144.94608887831345 },
+                map: map
+            });
+            markers.push(marker2);
+
+            // 227 Bourke Street, Melbourne, VIC 3000
+            var marker3 = new google.maps.Marker({
+                position: { lat: -37.813380, lng: 144.966910 },
+                map: map
+            });
+            markers.push(marker3);
+
+            // Montague st - south Melbourne
+            var marker4 = new google.maps.Marker({
+                position: { lat: -37.83127, lng: 144.950313 },
+                map: map
+            });
+            markers.push(marker4);
+
+            // Alfred Health - The Alfred Hospital: 55 COMMERCIAL RD, MELBOURNE VIC 3004, Australia
+            var marker5 = new google.maps.Marker({
+                position: { lat: -37.8456035, lng: 144.982784 },
+                map: map
+            });
+            markers.push(marker5);
+            
+            // Prahran Respiratory Clinic (Star Health - Prahran Town Hall): 180 Greville St, Prahran VIC 3181
+            var marker6 = new google.maps.Marker({
+                position: { lat: -37.8492793, lng: 144.991449 },
+                map: map
+            });
+            markers.push(marker6);
+
+            // Melbourne Pathology - Balaclava: Carlisle Street, Balaclava VIC 3183
+            var marker7 = new google.maps.Marker({
+                position: { lat: -37.8688583, lng: 144.9942072 },
+                map: map
+            });
+            markers.push(marker7);
+
+            // 231 Russell Street, Melbourne, VIC 3000
+            var marker8 = new google.maps.Marker({
+                position: { lat: -37.811250, lng: 144.967100 },
+                map: map
+            });
+            markers.push(marker8);
+
+            // St Vincent's Hospital Melbourne - Fever Clinic: 41 Victoria Parade, Fitzroy VIC 3065
+            var marker9 = new google.maps.Marker({
+                position: { lat: -37.8070907, lng: 144.9746724 },
+                map: map
+            });
+            markers.push(marker9);
+
+
+            // add markers information pop-up of testing site
+            var infoWindows = [];
+
+            var infoWindow1 = new google.maps.InfoWindow({
+                content: '<h3>Aughtie Walk - Albert Park</h3><h4>23 Aughtie Dr, Albert Park, VIC, 3206</h4>'
+            });
+            infoWindows.push(infoWindow1);
+
+            var infoWindow2 = new google.maps.InfoWindow({
+                content: '<h3>Port Melbourne Respiratory Clinic</h3><h4>405 Bay St, Port Melbourne, VIC 3207</h4>'
+            });
+            infoWindows.push(infoWindow2);
+
+            var infoWindow3 = new google.maps.InfoWindow({
+                content: '<h3>Bourke Street Melbourne CBD</h3><h4>227 Bourke St, Melbourne, VIC 3000</h4>'
+            });
+            infoWindows.push(infoWindow3);
+
+            var infoWindow4 = new google.maps.InfoWindow({
+                content: '<h3>Montague St - South Melbourne</h3><h4>120 Montague St, South Melbourne, VIC 3205</h4>'
+            });
+            infoWindows.push(infoWindow4);
+
+            var infoWindow5 = new google.maps.InfoWindow({
+                content: '<h3>Alfred Health - The Alfred Hospital</h3><h4>55 COMMERCIAL RD, MELBOURNE VIC 3004</h4>'
+            });
+            infoWindows.push(infoWindow5);
+
+            var infoWindow6 = new google.maps.InfoWindow({
+                content: '<h3>Prahran Respiratory Clinic (Star Health - Prahran Town Hall) </h3><h4>180 Greville St, Prahran VIC 3181</h4>'
+            });
+            infoWindows.push(infoWindow6);
+
+            var infoWindow7 = new google.maps.InfoWindow({
+                content: '<h3>Melbourne Pathology - Balaclava</h3><h4>Carlisle Street, Balaclava VIC 3183</h4>'
+            });
+            infoWindows.push(infoWindow7);
+
+            var infoWindow8 = new google.maps.InfoWindow({
+                content: '<h3>4 Cyte Pathology - Melbourne CBD</h3><h4>231 Russell St, Melbourne, VIC 3000</h4>'
+            });
+            infoWindows.push(infoWindow8);
+
+            var infoWindow9 = new google.maps.InfoWindow({
+                content: '<h3>St Vincents Hospital Melbourne - Fever Clinic</h3><h4>41 Victoria Parade, Fitzroy VIC 3065</h4>'
+            });
+            infoWindows.push(infoWindow9);
+
+            // add event listeners for pop-ups to work when clicked on
+            for (let i = 0; i < markers.length; i++) {
+                markers[i].addListener('click', function () {
+                    infoWindows[i].open(map, markers[i]);
+                })
+            };
+
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPFx8f5Cb4EIuZw7v-jVkjqAI-wpcYoCc&callback=initMap&v=weekly">
+        </script>
 
 </body>
 
