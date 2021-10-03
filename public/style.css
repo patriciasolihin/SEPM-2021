@@ -1,47 +1,86 @@
-header{
-    font-family: Arial, Helvetica, sans-serif;
-    color:black;
-    text-align: center;
+body{
+	margin: auto;
+	font-family: "Arial";
+	
 }
 
-.name{
-    font-size: 45px;
-    text-align: center;
-    background-color: #e6e6fa;;
+header {
+	font-size: 40px;
+	color: #016064;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 15px;
 }
 
-li{
-    font-size: 25px;
+nav{
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	background-color: #48AAAD;
 }
 
-.content{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+main{
+	padding-top:10px;
+	padding-left: 15px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	background-color: transparent;
 }
 
-h2{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
+footer {
+	padding-top:10px;
+	padding-left: 15px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	background-color: #48AAAD;
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height: 60px;
+   color: white;
+   float: bottom;
 }
 
-p{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-
-table, th, td {
-    font-family: Arial, Helvetica, sans-serif;
-    border:1px solid black;
-}
-
-footer{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    font-size: 25px;
-    background-color: #e6e6fa;
+#navigation{
+	font-size: 25px;
+	color: white;
+	text-decoration: none;
+	word-spacing: 20px;
 }
 
 
-/* TEST COMMENT CODE FOR THE TEST COMMIT */
+a:link {
+  color: white;
+text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#searchbar{
+	float: right;
+	font-size: 20px;
+}
+
+#bookbutton img{
+	float:center;
+	margin:auto;
+	width: 300px;
+	height: auto;
+	display: block;
+	padding: 15px;
+}
+
+#bookbutton {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
