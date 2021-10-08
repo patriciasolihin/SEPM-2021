@@ -37,19 +37,17 @@ main{
 }
 
 footer {
-	top: 100%;
 	padding-top:10px;
 	padding-left: 15px;
 	padding-right: 10px;
 	padding-bottom: 10px;
 	background-color: #48AAAD;
-   position: sticky;
+   position:absolute;
    bottom:0;
-   
-   height: 20px;
+   width:100%;
+   height: 60px;
    color: white;
    float: bottom;
-   
 }
 
 #navigation{
@@ -100,4 +98,150 @@ img.small {
 	height: 50px; 
 }
 
+#username {
+	width: 20em;
+	height: 3em;
+	font-size: 16px;
+}
 
+#pass {
+	width: 20em;
+	height: 3em;
+	font-size: 16px;
+}
+
+#Login {
+	width: 20em;
+	height: 2em;
+	background-color: #016064;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	font-size: 16px;
+	font-family: "arial";
+	text-align: center;
+	line-height: 1em;
+	padding-top:1em;
+}
+
+#SignUp {
+	width: 15em;
+	height: 2em;
+	background-color: #59788E;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	font-size: 16px;
+	font-family: "arial";
+	text-align: center;
+	line-height: 1em;
+	padding-top:1em;
+}
+
+table.logintable{
+	background-color: white;
+	padding-top:40px;
+	padding-bottom:10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	align-items: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#loginnav{
+	font-size: 25px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+
+#Logout {
+	width: 150px;
+	height: 1.5em;
+	background-color: #016064;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	font-size: 16px;
+	font-family: "arial";
+	text-align: center;
+	padding-top: 5px;
+}
+
+table.userdetails{
+	background-color: white;
+	padding-top:40px;
+	padding-bottom:10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+table.userdetails td{
+	padding: 10px;
+	font-size: 15px;
+}
+
+table.bookingdetails{
+	background-color: white;
+	padding-top:40px;
+	padding-bottom:10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+table.bookingdetails td{
+	padding: 10px;
+	font-size: 16px;
+}
+
+#locfilter {
+	width: 150px;
+	height: 2em;
+	background-color: #016064;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	font-size: 16px;
+	font-family: "arial";
+	text-align: center;
+	padding-top: 2px;
+}
+
+#locationtable{
+	margin-top: 20px;
+	font-family: "arial";
+	border-color: transparent;
+}
+
+#locationtable th,td{
+	width: 250px;
+	height: auto;
+	border-color: transparent;
+}
+	
+#locationtable th{
+	background-color: #d0ece7 ;
+	border-bottom-color: black;
+}
